@@ -10,4 +10,9 @@ public class Main
     {
         System.out.println("This is a method.");
     }
+
+    static void finalImprovements()
+    {
+        System.out.println("I have finished working on my task.");
+    }
 }
