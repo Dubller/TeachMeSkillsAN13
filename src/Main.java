@@ -15,4 +15,9 @@ public class Main
     {
         System.out.println("I have finished working on my task.");
     }
+    
+    static void newNewMessageThroughGitHub()
+    {
+        System.out.println();
+    }
 }
