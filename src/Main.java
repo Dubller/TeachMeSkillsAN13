@@ -5,4 +5,9 @@ public class Main
         System.out.println("Welcome");
         System.out.print("Welcome");
     }
+
+    static void getMessage()
+    {
+        System.out.println("This is a method.");
+    }
 }
