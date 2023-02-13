@@ -6,248 +6,159 @@ import java.util.Scanner;
 public class Main
 {
     public static void main(String[] args) {
-//        checkLogicalNo();
-//        switchOperator();
-        // getMySymbol();
-        // enterMyDetails();
-        // getRandomNumbers();
-        // loops();
-        // enterNumbers();
-        // oneDimensionalArray();
-        // setArraySize();
-//        workWithArrays();
-        binarySearch();
+//        twoDimensionalArray();
+        breakPoints();
     }
 
-    static void checkLogicalNo()
+    static void twoDimensionalArray()
     {
-        // ==
-        // <
-        // >
-        // <=
-        // >=
-        // !
+        int[] oneDimensionalArray = new int [] {1, 5, 8};
+        int[][] twoDimensionalArray = new int[3][3];
+        int[][] ticTacToeTable = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+        int[][] irregularArray = {
+                {7, 10, 9, 1},
+                {1},
+                {4, 9},
+                {19, 20, 21, 34, -1}
+        };
 
-        boolean married = false;
+        int counter = 1;
 
-        if (!married) // if (married != true)
+
+        for (int index = 0; index < oneDimensionalArray.length; index++) // reading and modifying
         {
-            System.out.println("Your are married.");
-        } else
-        {
-            System.out.println("You are not married.");
+            System.out.println(oneDimensionalArray[index]);
         }
 
-        int x = 10;
-        int z = 1;
-
-        if (!(x == z))
+        for (int el : oneDimensionalArray) //foreach for reading only
         {
-            System.out.println("Numbers are equal");
-        }
-    }
-
-    static void switchOperator()
-    {
-        int num = 12;
-
-        switch(num)
-        {
-            case 10: // if (num == 10)
-                System.out.println("Num equals " + num);
-                break;
-            case 11:
-                System.out.println("Num does not equal 10");
-                break;
-            case 12:
-            case 13:
-                System.out.println("You got this message if you have 12 or 13");
-                break;
-            default:
-                System.out.println("Number does not equal 10 or 11");
-                break;
-        }
-    }
-
-    static void getMySymbol()
-    {
-        System.out.print("Please, enter symbols from a to d: ");
-
-        Scanner symbol = new Scanner(System.in);
-
-        String mySymbol = symbol.nextLine();
-
-        switch (mySymbol)
-        {
-            case "a":
-                System.out.println("You have entered lower a");
-                break;
-            case "b":
-                System.out.println("You have entered lower b");
-                break;
-            case "c":
-                System.out.println("You have entered lower c");
-                break;
-            case "d":
-                System.out.println("You have entered lower d");
-                break;
-            default:
-                System.out.println("You have entered the wrong value.");
+            System.out.println(el);
         }
 
-        symbol.close();
-    }
+        System.out.println(Arrays.toString(oneDimensionalArray));
 
-    static void enterMyDetails()
-    {
-        Scanner data = new Scanner(System.in);
-
-        System.out.print("Please, enter you family name: ");
-        String name = data.nextLine();
-
-        System.out.print("Please, enter your age: ");
-        int age = Integer.parseInt(data.nextLine()); // Integer.parseInt, Double.parseDouble, String.parseString()
-
-        System.out.print("Please, enter where do you live: ");
-        data.nextLine();
-
-        data.close();
-    }
-
-    static void getRandomNumbers()
-    {
-        Random randomNumber = new Random();
-        int getRandomNumberFullInteger = randomNumber.nextInt(); // full integer scale
-        int getRandomNumberWithMax = randomNumber.nextInt(10); // 0 - 9
-        int getRandomNumberMinMax = randomNumber.nextInt(-100, 100); // min & max
-
-        System.out.println("Your random number with full integer is: " + getRandomNumberFullInteger);
-        System.out.println("Your random number with max 10 is: " + getRandomNumberWithMax);
-        System.out.println("Your random number with min and max is: " + getRandomNumberMinMax);
-    }
-
-    static void loops()
-    {
-        // while()
-        // do while()
-        // for ()
-
-        int numberOfLines = 1;
-
-        while(numberOfLines <= 10)
+        for (int rows = 0; rows < twoDimensionalArray.length; rows++)
         {
-            System.out.println("Line number " + numberOfLines);
-            numberOfLines++;
+            for (int cols = 0; cols < twoDimensionalArray[rows].length; cols++)
+            {
+                twoDimensionalArray[rows][cols] = counter++;
+            }
         }
 
-        numberOfLines = 1;
-        System.out.println();
-
-        do
+        for (int rows = 0; rows < twoDimensionalArray.length; rows++)
         {
-            System.out.println("Line number " + numberOfLines);
-            numberOfLines++;
-        } while(numberOfLines <= 10);
+            for (int cols = 0; cols < twoDimensionalArray[rows].length; cols++)
+            {
+                System.out.print(twoDimensionalArray[rows][cols] + " ");
+            }
+            System.out.println();
+        }
 
-        System.out.println();
-
-        for (int numberLines = 1; numberLines <=10; numberLines++)
+        // foreach reading only
+        for (int[] outer : ticTacToeTable)
         {
-            System.out.println("Line number " + numberLines);
+            for (int data : outer)
+            {
+                System.out.println(data);
+            }
+        }
+
+        System.out.println(Arrays.deepToString(twoDimensionalArray));
+        System.out.println(Arrays.deepToString(irregularArray));
+
+        // * * * * *
+        // * * * * *
+        // * * * * *
+
+        char[][][] charSymbols = {
+                {{'A', 'B'}},
+                {{'D', 'F'}, {'Z', 'Y'}},
+        };
+
+        System.out.println(Arrays.deepToString(charSymbols));
+
+        for (int edge = 0; edge < charSymbols.length; edge++)
+        {
+            for (int innerEdge = 0; innerEdge < charSymbols[edge].length; innerEdge++)
+            {
+                for (int el = 0; el < charSymbols[edge][innerEdge].length; el++)
+                {
+                    System.out.println(charSymbols[edge][innerEdge][el]);
+                }
+            }
+        }
+
+        int[] arrayN1 = {1, 2, 3};
+        int[] arrayN2 = {8, 7, 4};
+
+        if (Arrays.equals(arrayN1, arrayN2))
+        {
+            System.out.println("Equal");
+        } else {
+            System.out.println("Is not equal...");
         }
     }
 
-    static void enterNumbers()
+    static void breakPoints()
     {
-        Scanner numbers = new Scanner(System.in);
+        // new, int, float, double, String, static, void, char, boolean
+        // break, continue, return
+        int num1 = 15;
+        int num2 = 20;
 
-        for (int counter = 1; counter <= 10; counter++)
-        {
-            System.out.print("Number " + counter + ": ");
-            numbers.nextInt();
-        }
-        numbers.close();
-    }
-
-    static void oneDimensionalArray()
-    {
-        // Array - массив
-        int[] numbers = new int[10]; // одномерный массив с памятью в 10 цифл типа int
-        String[] names = new String[10];
-
-        // int[] numbers;
-        // numbers = new int[10];
-
-        char[] symbols = new char[] {'A', 'B', 'C', 'D'}; // char[] symbols = new char[4] {'A', 'B', 'C', 'D'};
-
-        System.out.println("My first char symbol is: " + symbols[1]);
-
-        numbers[0] = 1;
-        numbers[1] = 2;
-
-        for (int index = 0; index < symbols.length; index++)
-        {
-            System.out.println(symbols[index]);
-        }
-
-        System.out.println(Arrays.toString(symbols));
-    }
-
-    static void setArraySize()
-    {
-        Scanner arrayElements = new Scanner(System.in);
-
-        int[] numbers = new int[arrayElements.nextInt()];
+        int[] numbers = new int[]{1, 2, 3, 4, 5, 6, 7};
 
         for (int index = 0; index < numbers.length; index++)
         {
-            numbers[index] = index;
+            if (index == 5)
+            {
+                break;
+            } else {
+                System.out.println(numbers[index]);
+            }
         }
 
-        System.out.println(Arrays.toString(numbers));
+        String[] names = new String[] {"Name", "Name2", "Name3"};
 
-        arrayElements.close();
-    }
-
-    static void workWithArrays()
-    {
-        int[] numbers = new int[] {1, 2, 3, 4, 5};
-        int[] numbers2 = new int[10];
-
-        for (int index = 0; index < numbers.length; index ++)
+        for (int index = 0; index < names.length; index++)
         {
-            numbers2[index] = numbers[index];
+            if (index == 1)
+            {
+                continue;
+            } else {
+                System.out.println(names[index]);
+            }
         }
 
-        System.out.println(Arrays.toString(numbers2));
+        int x = 10;
+        int y = 10;
 
-        String[] names = new String[] {"Archil", "Ilona", "Kiril", "Igor"};
-        String[] selectedNames = new String[names.length];
+        for (int countNumbers = 1; countNumbers <= 10; countNumbers++)
+        {
+            System.out.println("Counter: " + countNumbers);
+            break;
+        }
 
-        selectedNames = Arrays.copyOf(names, names.length);
+        for (int countNumbers = 1; countNumbers <= 10; countNumbers++)
+        {
+            System.out.println("Counter: " + countNumbers);
+            return;
+        }
 
-        System.out.println(Arrays.toString(selectedNames));
-
-        System.out.println(Arrays.compare(names, selectedNames));
+        System.out.println("Next Line");
+        System.out.println("Second line...");
     }
 
-    static void binarySearch()
+    static void vocabulary()
     {
-        int[] numbers = new int []{14, 2, 3, 4, 5};
-        int[] numbers2 = new int[]{1, 1, 9, -1, 15};
+        // keys
+        String[] keys; // keys - Яблоко
+        String[] value; // values - Apple
 
-        String[] names = new String[]{"Archil", "Ilona"};
-
-//        for (; ; )
-//        {
-//            System.out.println("Infinity loop...");
-//        }
-
-//        while(true)
-//        {
-//            System.out.println("Infinity loop...");
-//        }
-
-
+        String[][] keysValues = new String[1000][1]; // [keys][values] [0][0] -> Яблоко, Apple
     }
 }
