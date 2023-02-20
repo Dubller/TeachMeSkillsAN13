@@ -61,7 +61,12 @@ public class Cars {
         this.category = category;
     }
 
-    public void getCategory()
+    public String getCategory()
+    {
+        return category;
+    }
+
+    public void category()
     {
         System.out.println("Your car category: " + this.category);
     }

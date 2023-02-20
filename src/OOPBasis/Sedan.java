@@ -11,4 +11,9 @@ public class Sedan extends Cars{
         super(model, color, productionYear);
         setCategory("Sedan");
     }
+
+    @Override
+    public void category() {
+        System.out.println("This is " + getCategory());
+    }
 }
