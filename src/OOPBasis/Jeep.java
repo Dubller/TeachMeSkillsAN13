@@ -9,6 +9,7 @@ public class Jeep extends Cars{
 
     public Jeep(String model, String color, int productionYear) {
         super(model, color, productionYear);
+        setCategory("Jeep");
     }
 
     @Override

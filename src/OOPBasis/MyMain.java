@@ -32,5 +32,6 @@ public class MyMain {
         System.out.println();
 
         cars[0].drive();
+        cars[0].getCategory();
     }
 }
