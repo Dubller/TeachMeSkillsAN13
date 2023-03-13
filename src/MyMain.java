@@ -1,13 +1,10 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.*;
 
 public class MyMain {
     public static void main(String[] args) {
         // ArrayList -> array
         // LinkedList -> связанный список
-        // Deque
+        // ArrayDeque
         // Synchronization
 
         // difference
@@ -31,6 +28,34 @@ public class MyMain {
         // contains
         // capacity()
         // Arrays.asList
+        ArrayList <String> names = new ArrayList<>();
+
+        ArrayList <String> names2 = new ArrayList<>(Arrays.asList("Archil", "Ilona", "Kirill", "Sergey")); // List + ArrayList
+
+        for (int index = 0; index < names2.size(); index++)
+        {
+            names2.get(index);
+        }
+
+        for (String name : names2)
+        {
+            System.out.println(name);
+        }
+
+        names2.add(0, "Igor");
+
+        System.out.println("\n" + names2.get(0));
+
+        List<String> listName = new ArrayList<String>(); // List -> child
+
+        System.out.println("-----------------------------------------------");
+
+        Iterator name = names2.iterator();
+
+        while (name.hasNext())
+        {
+            System.out.println(name.next());
+        }
 
         //-------------------------------------------------------------------------------------------------------------
 
@@ -50,6 +75,13 @@ public class MyMain {
         // pollFirst() - retreives ahd removes first element, or null
         // pollLast
 
+        LinkedList<String> namesLinked = new LinkedList<>(Arrays.asList("Link1", "Link2"));
+
+        System.out.println("\n" + namesLinked.get(1));
+
+        String polledValue = namesLinked.poll();
+        System.out.println(polledValue);
+
         //-------------------------------------------------------------------------------------------------------------
 
         // ArrayDeque
@@ -60,5 +92,7 @@ public class MyMain {
         // lightweight
         // not synchronized
         // has maximum capacity
+        ArrayDeque <Integer> numbers = new ArrayDeque<Integer>();
+        numbers.add(100);
     }
 }
